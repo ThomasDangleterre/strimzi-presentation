@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!--
+						TODO: add slide before strimzi, comment déployer ...
+
+				-->
+
+				<section>
+					Créez des flux de données entre Kafka et une multitude de systèmes grâce à Strimzi
+				</section>
+
+				<section>
+					<h2>Quel est le lien entre ces 3 mots ?</h2>
+					<h3>Kafka-Kubernetes-Welsh</h3> 
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						### Qui suis-je ?
+						
+						Thomas D🏴󠁧󠁢󠁥󠁮󠁧󠁿
+
+						Decathlon 
+
+						Age of Access Accelerator 
+						
+						Software Engineer
+						
+						Note: 
+						Transition : Créez des flux de données entre Kafka et une multitude de systèmes grâce à Strimzi
+					</textarea>
+				</section>
+
+				<section>
+						<img src="./assets/img/kafka_logo.svg"class="r-stretch">
+						
+						<ul class="fragment" data-fragment-index="1">
+							<li>Haute disponibilité</li>
+							<li>Scalabilité</li>
+							<li>Résilience</li>
+						</ul>
+
+						<aside class="notes">
+							Note: 
+							Uses cases :
+							- Messaging 
+							- Event sourcing 
+							- Activity tracking
+							- Aggregation de logs
+							Système central des SI :
+							- Résilience
+							- Haute disponibilité
+							- Scalabilité
+							Besoin  grandissant  en échange de données
+						</aside>
+				</section>
+
+				<section data-markdown data-auto-animate>
+					<textarea data-template data-separator-notes="^Note:">
+						
+						<img id="usual-pattern" src="assets/diagram/1-1_kafka_usual_pattern.drawio.png" width="100%"/>
+						
+						Note: 
+						
+					</textarea>
+				</section>
+
+				<section  data-auto-animate>						
+						<img id="usual-pattern" src="assets/diagram/1-2_kafka_usual_pattern.drawio.png"class="r-stretch" />
+				</section>
+
+				<section  data-auto-animate>
+						<img id="usual-pattern" src="assets/diagram/1-3_kafka_usual_pattern.drawio.png" class="r-stretch" />
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						
+						<img src="assets/img/kafka-connect_logo.png" width="500"/>
+
+						- Distributed and scalable by default
+						- Streaming/batch integration
+						- Rest interface
+						- A common framework for Kafka connectors
+
+						Note: 
+						
+					</textarea>
+				</section>
+
+				<section data-transition="none">
+						<h2>Source Connector</h2> 
+						<img  src="assets/diagram/2_source_connector.drawio.png" class="r-stretch" />
+				</section>
+
+				<section data-transition="none">
+						<h2>Log-Based Change Data Capture</h2>
+						<img  src="assets/diagram/2-2_source_connector.drawio.png" class="r-stretch" />
+					</textarea>
+				</section>
+
+
+				<section>
+						<h2>Sink Connector</h2>
+						<img src="assets/diagram/3_sink_connector.drawio.png" class="r-stretch" />
+				</section>
+
+				<section >
+					<h2>Data lake Sink Connector</h2>
+					<img src="assets/diagram/3-1_sink_connector.drawio.png" class="r-stretch" />
+				</section>
+				
+				<section>
+
+						<h1 class="r-fit-text">+200 <span class="fragment">plugins</span></h1>
+						<div class="r-stack">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/2376eb764a668f7b21284b67e28aaf03/8eb88/elasticsearch.jpg" width="300" height="300">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/1d4c070f3c5e032a6c4dc1abcbe1056b/42cd6/jdbc.jpg" width="300" height="300">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/87dd49d949b98d7db4090c03d93bd7ca/42cd6/s3.jpg" width="300" height="300">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/6e774deb22405f068a0977861bae4b1f/56f4d/color_debezium_256px.png" width="300" height="300">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/300c1719c2203fbccf88bf39f71ec3b5/f7d49/BigQuery.png" width="300" height="300">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/1dbd9b3e1b31da848ef31b8d21d474c7/f7d49/mongodb-leaf.png" width="300" height="300">
+							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/ca37b96496fb05ca85429d0a33d9306d/5d351/snowflake.png" width="300" height="300">
+							<h2 class="r-fit-text fragment" style="background-color: white;">et plus si besoin ... </h2>
+						</div>
+	
+						<aside class="notes">
+							
+							Attention aux licences 
+							- flexibilité et réusabilité
+	
+							T: et plus
+						</aside>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						### Custom Plugin
+
+						```java
+						public class MySourceConnector extends SourceConnector {
+						}
+
+						public class MySinkConnector extends SinkConnector {
+						}
+						```
+						
+						Note: 
+						
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						### 1.Créer un Connecteur 
+
+						```json [2|3-4|3-5|3-6|8]
+						{
+							"name": "file-sink-connector",
+							"config": {
+									"connector.class": "org.apache...FileStreamSinkConnector",	
+									"topics": "test-topic",
+									"tasks.max": "10",
+
+									"file":"/tmp/messages.txt"
+							}
+						}
+						```
+
+						<img src="assets/img/config_file.png" width="50"/>
+
+						Note: 
+						connector.class -> fourni par un plugin 
+
+						topics: une liste de topic, possibilité de mettre une regex à la place
+						tasks.max: nombre de taches -> scalabilité
+						
+						configuration spécifique au type de connector.
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="none" data-auto-animate="">
+					<textarea data-template data-separator-notes="^Note:" >
+						### 2. Déployer un Connecteur 
+						<img src="assets/diagram/4-1_kafka_connect_archi.drawio.png" width="600"/>
+						
+						Note: 
+					</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate data-transition="none">
+					<textarea data-template data-separator-notes="^Note:" >
+						### 2. Déployer un Connecteur 
+						<img src="assets/diagram/4-2_kafka_connect_archi.drawio.png" width="600"/>
+						
+						Note: 
+					</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate data-transition="none">
+					<textarea data-template data-separator-notes="^Note:" >
+						### 2. Déployer un Connecteur 
+						<img src="assets/diagram/4-3_kafka_connect_archi.drawio.png" width="600"/>
+						
+						Note: 
+					</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate  data-transition="none">
+					<textarea data-template data-separator-notes="^Note:" >
+						### 2. Déployer un Connecteur 
+						<img src="assets/diagram/4-4_kafka_connect_archi.drawio.png" width="600"/>
+						
+						Note: 
+					</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate data-transition="none">
+					<textarea data-template data-separator-notes="^Note:" >
+						### 2. Déployer un Connecteur 
+						<img src="assets/diagram/4-5_kafka_connect_archi.drawio.png" width="600"/>
+						
+						Note: 
+					</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate  data-transition="none">
+					<textarea data-template data-separator-notes="^Note:" >
+						### 2. Déployer un Connecteur 
+						<img src="assets/diagram/4-6_kafka_connect_archi.drawio.png" width="600"/>
+						
+						Note: 
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="none">
+					<textarea data-template data-separator-notes="^Note:">
+						### 3. Convertir et transformer des messages
+						<img src="assets/diagram/5-1_transforms_converters.drawio.png" width="600"/>
+
+						Note: 
+
+					</textarea>
+				</section>
+
+				<section data-markdown data-transition="none">
+					<textarea data-template data-separator-notes="^Note:" >
+						## 3. Convertir et transformer des messages
+
+						<img src="assets/diagram/5-2_transforms_converters.drawio.png" width="600"/>
+
+						Note: 
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						### Converters
+
+						```json 
+						{
+							...
+							"key.converter" : "org.apache.kafka.connect.storage.StringConverter"
+							"value.converter" : "org.apache.kafka.connect.json.JsonConverter"
+							...
+						}
+						```
+
+						<img src="assets/img/config_file.png" width="50"/>
+
+						Avro, Protobuf, Json, Json with schema, ByteArray... <!-- .element: class="fragment" data-fragment-index="1" -->
+
+						Note: 
+						tansformation simple et unitaire sur les message
+						pratique pour filtrer, router, renommer des champs... 
+					</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate>
+					<textarea data-template data-separator-notes="^Note:">
+						### Single Message Transforms 
+						
+						```json 
+						{
+							...
+							"transforms": "InsertSource",
+							"transforms.InsertSource.type": "org.apache.kafka.connect.transforms.InsertField$Value"
+							"transforms.InsertSource.static.field": "data_source",
+							"transforms.InsertSource.static.value": "test-file-source"
+							...
+						}
+						```
+						
+						<img src="assets/img/config_file.png" width="50"/>
+
+						Note: 
+						Question : qu'est ce que l'on peut faire avec  ces SMT ?
+					</textarea>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-stack">
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">Cast</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">Drop</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">ExtractField</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">Filter</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">GzipDecompress</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">InsertField</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">TopicRegexRouter</p>
+						<p class="fragment" style="background-color: rgba(255,255,255,1);">MaskField</p>
+					</div>
+				</section>
+
+				<section>
+
+					<img src="assets/img/strimzi-horizontal-color.png"class="r-stretch" />
+					<p class="fragment" data-fragment-index="1">Kubernetes-Native Experience</p>
+					<p class="fragment" data-fragment-index="1">Simple yet Configurable</p>
+					<p class="fragment" data-fragment-index="1">Secure by Default</p>
+
+					<aside class="notes">
+						- déployer ressources kafka sur kubernetes
+						- open source 
+						- cncf 
+						-
+						T: fourni des operators Kubernetes
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+
+						### Operator Pattern
+
+						<img src="assets/diagram/5_operator_pattern.drawio.png" width="300"/>
+
+						Note:
+						
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+
+						### Operator Pattern Characteristics
+
+						- Dynamic Configuration
+						- Operational Automation
+						- Domain Knowledge
+						
+						[CNCF Operator White Paper - Operator Characteristics](https://github.com/cncf/tag-app-delivery/blob/main/operator-wg/whitepaper/Operator-WhitePaper_v1-0.md#operator-characteristics)
+
+						Note:
+						Dynamic Configuration:
+						- conf par défaut pour faciliter le déploiement
+						- possibilité de customisé selon les besoins
+
+						Operation automation:
+						- supprime les tâches manuelles
+							- repetable, testable 
+							- ex: bakuck de bdd 
+
+						Domain Knowledge :
+						- etendre l'API kubernetes avec des notions propre à un domaine
+						- ex: étape pour upgrade bdd 
+
+						https://github.com/cncf/tag-app-delivery/blob/main/operator-wg/whitepaper/Operator-WhitePaper_v1-0.md
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						### Cluster Operator
+						
+						Custom Resource Definition: 
+						- KafkaConnect <!-- .element: class="fragment" data-fragment-index="1" -->
+						- KafkaConnector <!-- .element: class="fragment" data-fragment-index="2" -->
+
+						Note:
+						
+					</textarea>
+				</section>
+				<section>
+					<section data-markdown data-auto-animate>
+						<textarea data-template data-separator-notes="^Note:">
+							### KafkaConnect 
+
+							```yaml 
+							apiVersion: kafka.strimzi.io/v1beta2
+							kind: KafkaConnect
+							metadata:
+								name: my-connect-cluster
+								annotations:
+									strimzi.io/use-connector-resources: "true"
+							spec:
+							...
+							```
+							
+							Note:
+							
+						</textarea>
+					</section>
+
+					<section data-markdown data-auto-animate>
+						<textarea data-template data-separator-notes="^Note:">
+
+							```yaml [3-4|5-10]
+							...
+							spec:
+								replicas: 3
+								bootstrapServers: my-cluster-kafka-bootstrap:9092
+								config:
+									group.id: my-connect-cluster
+									offset.storage.topic: my-connect-cluster-offsets
+									config.storage.topic: my-connect-cluster-configs
+									status.storage.topic: my-connect-cluster-status
+							```
+							
+							Note:
+							
+						</textarea>
+					</section>
+
+
+					<section data-markdown data-auto-animate>
+						<textarea data-template data-separator-notes="^Note:">
+
+							``` yaml 
+							...
+							spec:
+							...
+								build:
+									output: #
+										type: docker
+										image: my-registry.io/my-org/my-connect-cluster:latest
+										pushSecret: my-registry-credentials
+							...			
+							```
+						
+							Note:
+							
+						</textarea>
+					</section>
+
+					<section data-markdown data-auto-animate>
+						<textarea data-template data-separator-notes="^Note:">
+							``` yaml 
+							...
+							spec:
+								build:
+									plugins: 
+										- name: debezium-postgres-connector
+											artifacts:
+												# Types supported : JAR, TGZ, ZIP, 
+												# Maven artifacts or Other artifacts
+												- type: tgz
+													url: https://repo1.maven.org/...
+													sha512sum: ...
+							```
+							
+							Note:
+							
+						</textarea>
+					</section>
+
+					<section>
+						<h2>Class Isolation</h2>
+						<img src="assets/diagram/6-1_Isolation_classe.drawio.png"/>
+					</section>
+
+					<section>
+						<h2>Class Isolation</h2>
+						<img src="assets/diagram/6-2_Isolation_classe.drawio.png"/>
+					</section>
+
+					<section data-markdown>
+						<textarea data-template data-separator-notes="^Note:">
+
+							```shell
+							kubectl apply -f kafka_connect.yml
+							kubectl get KafkaConnect 
+
+							NAME                 DESIRED REPLICAS   READY
+							my-connect-cluster   3                  True
+							```
+							
+							Note:
+							
+						</textarea>
+					</section>
+				</section>
+				
+				<section>
+					<section data-markdown data-auto-animate>
+						<textarea data-template data-separator-notes="^Note:">
+							### KafkaConnector
+
+							```yaml [2|4|6|8-9|10_13]
+							apiVersion: kafka.strimzi.io/v1beta2
+							kind: KafkaConnector
+							metadata:
+								name: file-sink-connector
+								labels:
+									strimzi.io/cluster: my-connect-cluster
+							spec:
+								class: org.apache.kafka.connect.file.FileStreamSinkConnector
+								tasksMax: 10
+								config:
+									topics: test-topic
+
+									file: /tmp/messages.txt
+							```
+							
+							Note:
+							
+						</textarea>
+				</section>
+
+				<section data-markdown data-auto-animate>
+					<textarea data-template data-separator-notes="^Note:">
+						### KafkaConnector 
+
+						```shell
+						kubectl get KafkaConnector
+
+						NAME                 CLUSTER         CONNECTOR CLASS                                MAX TASKS   READY
+						file-sink-connector  connect-cluster io.confluent.connect.s3.S3SinkConnector        10           True
+
+						```
+						
+						Note:
+						
+					</textarea>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div style="display: flex;">
+						<div style="width:50%;">
+							<img style="width:50%;" src="assets/img/decathlon_logo.jpeg"/>
+							<img style="width:50%;" src="assets/img/Technology_for_Value_Chain_Colors.png"/>
+						</div>
+						<div style="width:50%; align-items:center">
+							<img src="assets/img/strimzi-horizontal-color.png"/>
+						</div>
+					</div>
+				</section>
+
+				<section data-auto-animate > 
+					<p>
+						<span class="fragment" data-fragment-index="1">Data lake : ≈</span> 9 <span class="fragment" data-fragment-index="1">Millions events/day</span>
+					</p>
+					<p>
+						<span class="fragment" data-fragment-index="2">Observability: ≈</span> 76 <span class="fragment" data-fragment-index="2">Millions events/day</span>
+					</p>
+
+					<p>
+						<ul>
+							<li>14 <span class="fragment" data-fragment-index="3">Connectors</span> </li> 
+							<li>≈54 <span class="fragment" data-fragment-index="4">Tasks</span> </li>
+							<li>3 <span class="fragment" data-fragment-index="5">Workers</span> </li>
+							<ul>
+								<li>≈1 <span class="fragment" data-fragment-index="6">Gi / worker </span></li>
+								<li>≈0,150 <span class="fragment" data-fragment-index="7">cores/ worker</span></li>
+								<li>4 <span class="fragment" data-fragment-index="8">plugins</span></li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+			</section>
+				
+			<section>	
+				<section>
+					<img src="https://static.thenounproject.com/png/87601-200.png" />
+				</section>
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+					<img src="assets/img/auto_restart_issue.png" width="100%"/>
+				
+					Note:
+						
+					</textarea>
+				</section>
+
+
+				<section data-markdown>
+					<textarea data-template data-separator-notes="^Note:">
+						### Auto Restart 
+						
+						KafkaConnector 
+
+						```yaml
+						spec:
+							autoRestart:
+								enabled: true	
+						```
+						
+						Note:
+							
+					</textarea>
+				</section>
+			</section>
+
+				<section > 
+					<h2>On n'a pas parlé de</h2>
+					<div class="r-stack">
+
+						<img class="fragment" src="https://strimzi.io/docs/operators/in-development/images/overview/kafka-concepts-supporting-components.png" />
+						<img class="fragment" src="https://axual.com/wp-content/uploads/2021/05/strimzi-operator-types.jpeg"/>
+					</div>
+					<aside class="notes">
+						Dispo si besoin
+						
+					</aside>
+				</section>
+
+				<section data-background-iframe="https://strimzi.io/" data-preload>
+					<div style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.8); background-color:  rgba(255,255,255,0.9); color: #000; padding: 20px; ">
+						<h2>Documentation :</h2>
+						<a target="_blank" >https://strimzi.io/</a>
+					</div>
+				</section>
+
+				<section>
+					<h2>Quel est le lien entre ces 3 mots ?</h2>
+					<h3>Kafka-Kubernetes-Welsh</h3> 
+					<aside class="notes">
+						Question: intéressant ?
+					</aside>
+				</section>
+
+				<section> 
+					<p>Les slides </p>
+					<a target="_blank" >https://thomasdangleterre.github.io/strimzi-presentation/</a>	
+				</section>
+
+				<section >
+						<h3>Strimzi Governance Decathlon</h3>
+						<p>
+							Tech Radar Data Exchange : 
+							<ul>
+								<li style="color: green;">USE IT - for Kafka Connect</li>
+								<li style="color: red;">Forbidden - for Kafka Brokers (deploy with Aiven)</li>
+							</ul>
+						</p>
+						<p>Alternative:</p>
+						<p><a target="_blank" href="https://aiven.io/kafka-connect">Aiven for Apache Kafka Connect - Fully Managed</a></p>
+					</textarea>
+				</section>
+
+				<section>
+					<h2>Formation Kafka </h2>  
+
+					<p>Decathlon Academy : <a target="_blank" href="https://academy.decathlon.com/explore/presential/a49ac2e5-dfaa-4976-aabc-4aef559ceb71"> Training - Developer</a></p>
+				</section>
+				<section>
+					Merci :) 
+				</section>
+			</div>
+		
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
+
