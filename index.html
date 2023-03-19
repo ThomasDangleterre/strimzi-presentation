@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="stylesheet" href="dist/theme/custom.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -22,12 +22,12 @@
 				-->
 
 				<section>
-					Créez des flux de données entre Kafka et une multitude de systèmes grâce à Strimzi
+					<h3>Créez des flux de données entre Kafka et une multitude de systèmes grâce à Strimzi</h3>
 				</section>
 
 				<section>
-					<h2>Quel est le lien entre ces 3 mots ?</h2>
-					<h3>Kafka-Kubernetes-Welsh</h3> 
+					<h4>Quel est le lien entre ces 3 mots ?</h4>
+					<p>Kafka-Kubernetes-Welsh</p> 
 				</section>
 
 				<section data-markdown>
@@ -38,7 +38,7 @@
 
 						Decathlon 
 
-						Age of Access Accelerator 
+						Age of Access Accelerator - Technology 4 VC
 						
 						Software Engineer
 						
@@ -89,19 +89,19 @@
 						<img id="usual-pattern" src="assets/diagram/1-3_kafka_usual_pattern.drawio.png" class="r-stretch" />
 				</section>
 
-				<section data-markdown>
-					<textarea data-template data-separator-notes="^Note:">
+				<section>
 						
 						<img src="assets/img/kafka-connect_logo.png" width="500"/>
-
-						- Distributed and scalable by default
-						- Streaming/batch integration
-						- Rest interface
-						- A common framework for Kafka connectors
-
-						Note: 
-						
-					</textarea>
+						<ul>
+							<li>Distributed and scalable by default</li>
+							<li>Streaming/batch integration</li>
+							<li>Rest interface</li>
+							<li>A common framework for Kafka connectors</li>
+						</ul>
+						<aside class="notes">
+							<p>Fourni des connecteurs, créer des flux de données</p>
+							<p>évenementiel à batching/réferentiel </p>
+						</aside>
 				</section>
 
 				<section data-transition="none">
@@ -110,11 +110,10 @@
 				</section>
 
 				<section data-transition="none">
-						<h2>Log-Based Change Data Capture</h2>
+						<h3>Log-Based Change Data Capture</h3>
 						<img  src="assets/diagram/2-2_source_connector.drawio.png" class="r-stretch" />
 					</textarea>
 				</section>
-
 
 				<section>
 						<h2>Sink Connector</h2>
@@ -124,10 +123,12 @@
 				<section >
 					<h2>Data lake Sink Connector</h2>
 					<img src="assets/diagram/3-1_sink_connector.drawio.png" class="r-stretch" />
+					<aside class="notes">
+						envoie vers datalake sans perturber les consommations déjà exitante						
+					</aside>
 				</section>
 				
 				<section>
-
 						<h1 class="r-fit-text">+200 <span class="fragment">plugins</span></h1>
 						<div class="r-stack">
 							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/2376eb764a668f7b21284b67e28aaf03/8eb88/elasticsearch.jpg" width="300" height="300">
@@ -137,7 +138,7 @@
 							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/300c1719c2203fbccf88bf39f71ec3b5/f7d49/BigQuery.png" width="300" height="300">
 							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/1dbd9b3e1b31da848ef31b8d21d474c7/f7d49/mongodb-leaf.png" width="300" height="300">
 							<img class="fragment" style="background-color: rgba(255,255,255,0.8);" src="https://www.confluent.io/hub/static/ca37b96496fb05ca85429d0a33d9306d/5d351/snowflake.png" width="300" height="300">
-							<h2 class="r-fit-text fragment" style="background-color: white;">et plus si besoin ... </h2>
+							<p class="r-fit-text fragment" style="background-color: white;">et plus si besoin ... </p>
 						</div>
 	
 						<aside class="notes">
@@ -186,12 +187,14 @@
 						<img src="assets/img/config_file.png" width="50"/>
 
 						Note: 
-						connector.class -> fourni par un plugin 
+						No-code 
+						connector.class: fourni par un plugin 
 
 						topics: une liste de topic, possibilité de mettre une regex à la place
-						tasks.max: nombre de taches -> scalabilité
+						tasks.max: nombre de taches = scalabilité
 						
 						configuration spécifique au type de connector.
+						
 					</textarea>
 				</section>
 
@@ -251,7 +254,7 @@
 
 				<section data-markdown data-transition="none">
 					<textarea data-template data-separator-notes="^Note:">
-						### 3. Convertir et transformer des messages
+						#### 3. Convertir et transformer des messages
 						<img src="assets/diagram/5-1_transforms_converters.drawio.png" width="600"/>
 
 						Note: 
@@ -261,7 +264,7 @@
 
 				<section data-markdown data-transition="none">
 					<textarea data-template data-separator-notes="^Note:" >
-						## 3. Convertir et transformer des messages
+						#### 3. Convertir et transformer des messages
 
 						<img src="assets/diagram/5-2_transforms_converters.drawio.png" width="600"/>
 
@@ -316,24 +319,32 @@
 				</section>
 
 				<section data-auto-animate>
-					<div class="r-stack">
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">Cast</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">Drop</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">ExtractField</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">Filter</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">GzipDecompress</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">InsertField</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">TopicRegexRouter</p>
-						<p class="fragment" style="background-color: rgba(255,255,255,1);">MaskField</p>
-					</div>
+					<ul>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">Cast</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">Drop</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">ExtractField</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">Filter</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">GzipDecompress</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">InsertField</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">TopicRegexRouter</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">MaskField</li>
+						<li class="fragment" style="background-color: rgba(255,255,255,1);">...</li>
+					</ul>
+					<aside class="notes">
+							T: Déployer notre cluster Kafka Connect
+					</aside>
+				</section>
+
+				<section>
+					<img src="assets/img/undraw_Going_up_re_86kg.png" />
 				</section>
 
 				<section>
 
 					<img src="assets/img/strimzi-horizontal-color.png"class="r-stretch" />
-					<p class="fragment" data-fragment-index="1">Kubernetes-Native Experience</p>
-					<p class="fragment" data-fragment-index="1">Simple yet Configurable</p>
-					<p class="fragment" data-fragment-index="1">Secure by Default</p>
+					<h3 class="fragment" data-fragment-index="1">Kubernetes-Native Experience</h3>
+					<h3 class="fragment" data-fragment-index="1">Simple yet Configurable</h3>
+					<h3 class="fragment" data-fragment-index="1">Secure by Default</h3>
 
 					<aside class="notes">
 						- déployer ressources kafka sur kubernetes
@@ -347,7 +358,7 @@
 				<section data-markdown>
 					<textarea data-template data-separator-notes="^Note:">
 
-						### Operator Pattern
+						### Operator Pattern <!-- .element: class="r-fit-text" -->
 
 						<img src="assets/diagram/5_operator_pattern.drawio.png" width="300"/>
 
@@ -359,7 +370,7 @@
 				<section data-markdown>
 					<textarea data-template data-separator-notes="^Note:">
 
-						### Operator Pattern Characteristics
+						#### Operator Pattern Characteristics
 
 						- Dynamic Configuration
 						- Operational Automation
@@ -398,6 +409,7 @@
 						
 					</textarea>
 				</section>
+
 				<section>
 					<section data-markdown data-auto-animate>
 						<textarea data-template data-separator-notes="^Note:">
@@ -622,11 +634,10 @@
 			</section>
 
 				<section > 
-					<h2>On n'a pas parlé de</h2>
+					<h2>On n'a pas parlé de ...</h2>
 					<div class="r-stack">
-
-						<img class="fragment" src="https://strimzi.io/docs/operators/in-development/images/overview/kafka-concepts-supporting-components.png" />
-						<img class="fragment" src="https://axual.com/wp-content/uploads/2021/05/strimzi-operator-types.jpeg"/>
+						<img class="fragment" style="background-color:  rgba(255,255,255,0.9);"  src="https://strimzi.io/docs/operators/in-development/images/overview/kafka-concepts-supporting-components.png" />
+						<img class="fragment" style="background-color:  rgba(255,255,255,0.9);" src="https://axual.com/wp-content/uploads/2021/05/strimzi-operator-types.jpeg"/>
 					</div>
 					<aside class="notes">
 						Dispo si besoin
@@ -637,13 +648,13 @@
 				<section data-background-iframe="https://strimzi.io/" data-preload>
 					<div style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.8); background-color:  rgba(255,255,255,0.9); color: #000; padding: 20px; ">
 						<h2>Documentation :</h2>
-						<a target="_blank" >https://strimzi.io/</a>
+						<a target="_blank" href="https://strimzi.io/">https://strimzi.io/</a>
 					</div>
 				</section>
 
 				<section>
-					<h2>Quel est le lien entre ces 3 mots ?</h2>
-					<h3>Kafka-Kubernetes-Welsh</h3> 
+					<h4>Quel est le lien entre ces 3 mots ?</h4>
+					<p>Kafka-Kubernetes-Welsh</p> 
 					<aside class="notes">
 						Question: intéressant ?
 					</aside>
@@ -651,7 +662,7 @@
 
 				<section> 
 					<p>Les slides </p>
-					<a target="_blank" >https://thomasdangleterre.github.io/strimzi-presentation/</a>	
+					<a target="_blank" href="https://thomasdangleterre.github.io/strimzi-presentation/">https://thomasdangleterre.github.io/strimzi-presentation/</a>	
 				</section>
 
 				<section >
@@ -674,7 +685,7 @@
 					<p>Decathlon Academy : <a target="_blank" href="https://academy.decathlon.com/explore/presential/a49ac2e5-dfaa-4976-aabc-4aef559ceb71"> Training - Developer</a></p>
 				</section>
 				<section>
-					Merci :) 
+					<h3>Merci 🙂</h3>
 				</section>
 			</div>
 		
